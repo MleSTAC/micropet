@@ -1,5 +1,26 @@
-input.onButtonPressed(Button.A, function () {
-	
+input.onGesture(Gesture.Shake, function () {
+    led.unplot(1, 1)
+    led.unplot(3, 1)
+    for (let index = 0; index < 4; index++) {
+        led.plot(1, 0)
+        led.plot(0, 1)
+        led.plot(3, 0)
+        led.plot(4, 1)
+        led.plot(0, 3)
+        led.plot(2, 4)
+        led.plot(3, 4)
+        led.plot(4, 3)
+        led.plot(1, 4)
+        led.plot(1, 3)
+        led.plot(2, 3)
+        led.plot(3, 3)
+        basic.pause(200)
+        led.toggle(1, 3)
+        led.toggle(2, 3)
+        led.toggle(3, 3)
+        basic.pause(200)
+    }
+    basic.clearScreen()
 })
 basic.forever(function () {
     led.plot(1, 1)
@@ -10,7 +31,7 @@ basic.forever(function () {
     led.plot(3, 4)
     led.plot(4, 3)
     basic.pause(2000)
-    led.unplot(1, 1)
-    led.unplot(3, 1)
+    led.toggle(1, 1)
+    led.toggle(3, 1)
     basic.pause(200)
 })
