@@ -1,6 +1,4 @@
 input.onGesture(Gesture.Shake, function () {
-    led.unplot(1, 1)
-    led.unplot(3, 1)
     for (let index = 0; index < 4; index++) {
         led.plot(1, 0)
         led.plot(0, 1)
